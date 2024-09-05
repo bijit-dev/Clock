@@ -1,27 +1,21 @@
-const hoursElement = document.getElementById('hours');
-const minutesElement = document.getElementById('minutes');
-const secondsElement = document.getElementById('seconds');
-const amPmElement = document.getElementById('am-pm');
+const hour = document.getElementById('hours');
+const minute = document.getElementById('minutes');
+const second = document.getElementById('seconds');
+const ampm = document.getElementById('am-pm');
 
 const calendar = document.getElementById('calendar');
 
 function updateClock() {
     const now = new Date();
-    let hours = now.getHours();
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
+    // let hours = now.getHours();
+    // hours = hours % 12;    
+    // hours = hours == 0 ? 12 : hours;
+    let hours = (now.getHours() % 12) == 0 ? 12 : now.getHours() % 12;
 
-    // Convert to 12-hour format
-    const amPm = hours < 12 ? 'AM' : 'PM';
-    hours = hours % 12;
-    if (hours === 0) {
-        hours = 12;
-    }
-
-    hoursElement.innerHTML = hours.toString().padStart(2, '0');
-    minutesElement.innerHTML = minutes;
-    secondsElement.innerHTML = seconds;
-    amPmElement.innerHTML = amPm;
+    hour.innerHTML = hours.toString().padStart(2, '0');
+    minute.innerHTML = now.getMinutes().toString().padStart(2, '0');
+    second.innerHTML = now.getSeconds().toString().padStart(2, '0');
+    ampm.innerHTML = hours < 12 ? 'AM' : 'PM';
 }
 
 function formatDate(date) {
