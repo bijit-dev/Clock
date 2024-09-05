@@ -1,25 +1,32 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #aed2ff;
 }
-
 .clock {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 64px;
+    font-size: 50px;
     font-weight: bold;
+    padding: 53px 41px 86px 42px;
+    border: 2px solid red;
+    border-radius: 10px;
+    background: #86e9fb;
 }
 
-#hours, #minutes, #seconds {
+#hours, #minutes, #seconds, #am-pm{
     padding: 10px;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#am-pm {
-    font-size: 50px;
-    margin-left: 10px;
+#calendar {
+    width: 400px;
+    font-family: Arial, sans-serif;
+    font-size: 29px;
+    font-weight: 600;
+    margin: 24px 27px;
+    color: rgb(29, 26, 216);
 }
